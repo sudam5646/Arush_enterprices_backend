@@ -6,12 +6,16 @@ const MONGOURI = "mongodb+srv://ArushEnterprises:2V1D8FTsdsZRruNB@cluster0.oojvq
 const PORT = process.env.PORT || 5000;
 var bodyParser = require('body-parser');
 var cors = require('cors')
-app.use(cors())
+//app.use(cors())
 // configure the app to use bodyParser()
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
+
+app.use(cors({
+    origin: '*'
+}));
 
 mongoose.connect(MONGOURI, {
     useNewUrlParser : true,
