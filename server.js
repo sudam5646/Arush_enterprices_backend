@@ -34,13 +34,13 @@ app.use(require('./routes/auth'))
 app.use(require('./routes/medical'))
 app.use(require('./routes/order'))
 
-if(process.env.NODE_ENV == "production"){
-    app.use(express.static('Arush_enterprices_frontend/build'))
-    const path = require('path')
-    app.get('*',(req,res)=>{
-        res.sendFile(path.resolve(__dirname,'Arush_enterprices_frontend','build','index.html',))
-    })
-}
+// if(process.env.NODE_ENV == "production"){
+//     app.use(express.static('Arush_enterprices_frontend/build'))
+//     const path = require('path')
+//     app.get('*',(req,res)=>{
+//         res.sendFile(path.resolve(__dirname,'Arush_enterprices_frontend','build','index.html',))
+//     })
+// }
 
 app.listen(PORT, () => {
     console.log("Server listening on port "+PORT);
