@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const {MONGOURI} = require('./config/key');
+//const {MONGOURI} = require('./config/key');
+const MONGOURI = "mongodb+srv://ArushEnterprises:2V1D8FTsdsZRruNB@cluster0.oojvq.mongodb.net/Arush_Enterprices?retryWrites=true&w=majority"
 const PORT = process.env.PORT || 5000;
 var bodyParser = require('body-parser');
 var cors = require('cors')
