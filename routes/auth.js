@@ -52,7 +52,8 @@ router.post('/signin', (req,res) =>{
         res.status(400).send({error:"please add email and password both"})
     }
     else{
-        User.findOne({email:email})
+        try{
+            User.findOne({email:email})
         .then(savedUser =>{
             if(!savedUser){
                 return res.status(400).send({error:"Email is not registered"})
@@ -69,6 +70,10 @@ router.post('/signin', (req,res) =>{
                 }
             })
         })
+        }catch(err){
+            return res.status(400).send({error:err})
+        }
+        
     }
 })
 
