@@ -13,13 +13,11 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-app.use((req,res, next)=>{
-    res.setHeader('Access-Control-Allow-Origin',"*");
-    res.setHeader('Access-Control-Allow-Headers',"*");
-    req.setHeader('Access-Control-Allow-Origin',"*");
-    req.setHeader('Access-Control-Allow-Headers',"*");
-    next();
-});
+// app.use((req,res, next)=>{
+//     res.setHeader('Access-Control-Allow-Origin',"*");
+//     res.setHeader('Access-Control-Allow-Headers',"*");
+//     next();
+// });
 
 // app.use(cors({
 //     origin: '*'
